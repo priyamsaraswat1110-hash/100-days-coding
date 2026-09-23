@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    double side1, side2, side3;
+
+    printf("Enter three sides of the triangle: ");
+    scanf("%lf %lf %lf", &side1, &side2, &side3);
+
+    if (side1 > 0 && side2 > 0 && side3 > 0) {
+        if ((side1 + side2 > side3) && (side1 + side3 > side2) && (side2 + side3 > side1)) {
+            if (side1 == side2 && side2 == side3) {
+                printf("\nTriangle Type: Equilateral\n");
+            } else if (side1 == side2 || side1 == side3 || side2 == side3) {
+                printf("\nTriangle Type: Isosceles\n");
+            } else {
+                printf("\nTriangle Type: Scalene\n");
+            }
+        } else {
+            printf("\nError: The given sides do not form a valid triangle.\n");
+        }
+    } else {
+        printf("\nError: Side lengths must be positive values.\n");
+    }
+
+    return 0;
+}
